@@ -6,7 +6,7 @@ abstract class AbstractPerformance {
 
     abstract void switchStatement(int operationType);
 
-    void executePerfomanceMeasurement(int operationType,String operation,String collection) {
+    void measure(int operationType,String operation,String collection) {
         long start = System.currentTimeMillis();
         switchStatement(operationType);
         long end = System.currentTimeMillis();
