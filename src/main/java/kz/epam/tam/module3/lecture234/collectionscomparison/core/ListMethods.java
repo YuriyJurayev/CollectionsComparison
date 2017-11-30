@@ -5,6 +5,9 @@ import java.util.LinkedList;
 
 public class ListMethods {
 
+    private ArrayList<Integer> aList = new ArrayList<>();
+    private LinkedList<Integer> lList = new LinkedList<>();
+
     public void pickOperation(int operationType) {
         switch (operationType){
             case 1:
@@ -14,37 +17,54 @@ public class ListMethods {
                 addElementsToLinkedList();
                 break;
             case 3:
-                addElementsToArrayList().get(1000000);
+                getElementsFromArrayList();
                 break;
             case 4:
-                addElementsToLinkedList().get(1000000);
+                getElementsFromLinkedList();
                 break;
             case 5:
-                addElementsToArrayList().remove(1000000);
+                removeElementsFromArrayList();
                 break;
             case 6:
-                addElementsToLinkedList().remove(1000000);
+                removeElementsFromLinkedList();
                 break;
         }
     }
-    private ArrayList<String> addElementsToArrayList() {
-
-        ArrayList<String> list = new ArrayList<>();
+    private void addElementsToArrayList() {
         for (int i = 0; i < 1000000; i++) {
-            list.add("1" + i);
+            aList.add(i);
         }
-        list.add("element to find");
-        return list;
     }
 
-
-    private LinkedList<String> addElementsToLinkedList() {
-
-        LinkedList<String> list = new LinkedList<>();
+    private void addElementsToLinkedList() {
         for (int i = 0; i < 1000000; i++) {
-            list.add("1" + i);
+            lList.add(i);
         }
-        list.add("element to find");
-        return list;
     }
+
+    private void getElementsFromArrayList(){
+        addElementsToArrayList();
+        for (int i = 0;i < 10000; i++){
+            aList.get(i);
+        }
+    }
+    private void getElementsFromLinkedList(){
+        addElementsToLinkedList();
+        for (int i = 0;i < 10000; i++){
+            lList.get(i);
+        }
+    }
+    private void removeElementsFromArrayList(){
+        addElementsToArrayList();
+        for (int i = 999999;i >= 0; i--){
+            aList.remove(i);
+        }
+    }
+    private void removeElementsFromLinkedList(){
+        addElementsToLinkedList();
+        for (int i = 999999;i >= 0; i--){
+            lList.remove(i);
+        }
+    }
+
 }

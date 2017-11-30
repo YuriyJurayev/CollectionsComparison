@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 public class MapMethods {
+    private HashMap<Integer,String> hMap = new HashMap<>();
+    private TreeMap<Integer,String> tMap = new TreeMap<>();
 
     public void pickOperation(int operationType) {
         switch (operationType){
@@ -14,37 +16,54 @@ public class MapMethods {
                 addElementsToTreeMap();
                 break;
             case 3:
-                addElementsToHashMap().containsValue("element to find");
+                getElementsFromHashMap();
                 break;
             case 4:
-                addElementsToTreeMap().containsValue("element to find");
+                getElementsFromTreeMap();
                 break;
             case 5:
-                addElementsToHashMap().remove(1000000, "element to find");
+                removeElementsFromHashMap();
                 break;
             case 6:
-                addElementsToTreeMap().remove(1000000, "element to find");
+                removeElementsFromTreeMap();
                 break;
         }
     }
-    private HashMap<Integer,String> addElementsToHashMap(){
-
-        HashMap<Integer,String> map = new HashMap<>();
+    private void addElementsToHashMap(){
         for(int i = 0; i < 1000000; i++){
-            map.put(i ,i + "1");
+            hMap.put(i ,i + "1");
         }
-        map.put(1000000,"element to find");
-        return map;
     }
 
-
-    private TreeMap<Integer,String> addElementsToTreeMap(){
-
-        TreeMap<Integer,String> map = new TreeMap<>();
+    private void addElementsToTreeMap(){
         for(int i = 0; i < 1000000; i++){
-            map.put(i ,i + "1");
+            tMap.put(i ,i + "1");
         }
-        map.put(1000000,"element to find");
-        return map;
+    }
+    private void getElementsFromHashMap(){
+        addElementsToHashMap();
+        for(int i = 0; i < 1000000; i++){
+            hMap.containsKey(i);
+        }
+    }
+
+    private void getElementsFromTreeMap(){
+        addElementsToTreeMap();
+        for(int i = 0; i < 1000000; i++){
+            tMap.containsKey(i);
+        }
+    }
+    private void removeElementsFromHashMap(){
+        addElementsToHashMap();
+        for(int i = 0; i < 1000000; i++){
+            hMap.remove(i);
+        }
+    }
+
+    private void removeElementsFromTreeMap(){
+        addElementsToTreeMap();
+        for(int i = 0; i < 1000000; i++){
+            tMap.remove(i);
+        }
     }
 }

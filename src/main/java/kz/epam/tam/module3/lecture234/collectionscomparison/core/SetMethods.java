@@ -5,6 +5,9 @@ import java.util.TreeSet;
 
 public class SetMethods {
 
+    private HashSet<String> hSet = new HashSet<>();
+    private TreeSet<String> tSet = new TreeSet<>();
+
     public void pickOperation(int operationType) {
         switch (operationType){
             case 1:
@@ -14,37 +17,55 @@ public class SetMethods {
                 addElementsToTreeSet();
                 break;
             case 3:
-                addElementsToHashSet().contains("element to find");
+                getElementsFromHashSet();
                 break;
             case 4:
-                addElementsToTreeSet().contains("element to find");
+                getElementsFromTreeSet();
                 break;
             case 5:
-                addElementsToHashSet().remove("element to find");
+                removeElementsFromHashSet();
                 break;
             case 6:
-                addElementsToTreeSet().remove("element to find");
+                removeElementsFromTreeSet();
                 break;
         }
     }
 
-    private HashSet<String> addElementsToHashSet(){
-
-        HashSet<String> set = new HashSet<>();
+    private void addElementsToHashSet(){
         for(int i = 0; i < 1000000; i++){
-            set.add("1" + i);
+            hSet.add("1" + i);
         }
-        set.add("element to find");
-        return set;
     }
 
-    private TreeSet<String> addElementsToTreeSet(){
-
-        TreeSet<String> set = new TreeSet<>();
+    private void addElementsToTreeSet(){
         for(int i = 0; i < 1000000; i++){
-            set.add("1" + i);
+            tSet.add("1" + i);
         }
-        set.add("element to find");
-        return set;
+    }
+    private void getElementsFromHashSet(){
+        addElementsToHashSet();
+        for(int i = 0; i < 1000000; i++){
+            hSet.contains("1" + i);
+        }
+    }
+
+    private void getElementsFromTreeSet(){
+        addElementsToTreeSet();
+        for(int i = 0; i < 1000000; i++){
+            tSet.contains("1" + i);
+        }
+    }
+    private void removeElementsFromHashSet(){
+        addElementsToHashSet();
+        for(int i = 0; i < 1000000; i++){
+            hSet.remove("1" + i);
+        }
+    }
+
+    private void removeElementsFromTreeSet(){
+        addElementsToTreeSet();
+        for(int i = 0; i < 1000000; i++){
+            tSet.remove("1" + i);
+        }
     }
 }
