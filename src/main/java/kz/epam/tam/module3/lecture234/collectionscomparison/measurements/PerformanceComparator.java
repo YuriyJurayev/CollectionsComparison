@@ -1,6 +1,9 @@
 package kz.epam.tam.module3.lecture234.collectionscomparison.measurements;
 
+import kz.epam.tam.module3.lecture234.collectionscomparison.core.ListMethods;
 import kz.epam.tam.module3.lecture234.collectionscomparison.utils.PerformancePrinter;
+
+import java.util.List;
 
 public class PerformanceComparator {
 
@@ -10,14 +13,16 @@ public class PerformanceComparator {
         PerformancePrinter.printStartMsg();
         PerformancePrinter.printType("List's");
         PerformancePrinter.printAction("Adding","to","list");
+
+
         measurer.measure(1,1,"Addition","ArrayList");
-        measurer.measure(1,2,"Addition","LinkedList");
+        measurer.measure(1,1,"Addition","LinkedList");
         PerformancePrinter.printAction("Searching","in","list");
-        measurer.measure(1,3,"Search","ArrayList");
-        measurer.measure(1,4,"Search","LinkedList");
+        measurer.measure(1,2,"Search","ArrayList");
+        measurer.measure(1,2,"Search","LinkedList");
         PerformancePrinter.printAction("Deleting","from","list");
-        measurer.measure(1,5,"Deletion","ArrayList");
-        measurer.measure(1,6,"Deletion","LinkedList");
+        measurer.measure(1,3,"Deletion","ArrayList");
+        measurer.measure(1,3,"Deletion","LinkedList");
     }
     public void compareSetsPerformance(){
 
