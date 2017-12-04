@@ -2,67 +2,53 @@ package kz.epam.tam.module3.lecture234.collectionscomparison.core;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ListMethods {
 
 
-    public void pickOperation(int operationType,ArrayList<Integer> a,LinkedList<Integer> l) {
-        switch (operationType){
-            case 1:
-                addElementsToArrayList();
-                break;
-            case 2:
-                addElementsToLinkedList();
-                break;
-            case 3:
-                getElementsFromArrayList(a);
-                break;
-            case 4:
-                getElementsFromLinkedList(l);
-                break;
-            case 5:
-                removeElementsFromArrayList(a);
-                break;
-            case 6:
-                removeElementsFromLinkedList(l);
-                break;
-        }
-    }
-    public ArrayList<Integer> addElementsToArrayList() {
-        ArrayList<Integer> aList = new ArrayList<>();
-        for (int i = 0; i < 1000000; i++) {
-            aList.add(i);
-        }
-        return aList;
-    }
-
-    public LinkedList<Integer> addElementsToLinkedList() {
+    public LinkedList<Integer> createLinkedList() {
         LinkedList<Integer> lList = new LinkedList<>();
         for (int i = 0; i < 1000000; i++) {
             lList.add(i);
         }
         return lList;
     }
+    public ArrayList<Integer> createArrayList() {
+        ArrayList<Integer> lList = new ArrayList<>();
+        for (int i = 0; i < 1000000; i++) {
+            lList.add(i);
+        }
+        return lList;
+    }
+    public void pickOperation(int operationType,List<Integer> a) {
+        switch (operationType){
+            case 1:
+                addElements(a);
+                break;
+            case 2:
+                getElements(a);
+                break;
+            case 3:
+                removeElements(a);
+                break;
+        }
+    }
+    public void addElements(List<Integer> a) {
+        for (int i = 0; i < 1000000; i++) {
+            a.add(i);
+        }
+    }
 
-    private void getElementsFromArrayList(ArrayList<Integer> a){
-
+    private void getElements(List<Integer> a){
         for (int i = 0;i < 10000; i++){
             a.get(i);
         }
     }
-    private void getElementsFromLinkedList(LinkedList<Integer> l){
-        for (int i = 0;i < 10000; i++){
-            l.get(i);
-        }
-    }
-    private void removeElementsFromArrayList(ArrayList<Integer> a){
+
+    private void removeElements(List<Integer> a){
         for (int i = 999999;i >= 0; i--){
             a.remove(i);
-        }
-    }
-    private void removeElementsFromLinkedList(LinkedList<Integer> l){
-        for (int i = 999999;i >= 0; i--){
-            l.remove(i);
         }
     }
 
