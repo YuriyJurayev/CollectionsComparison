@@ -1,69 +1,40 @@
 package kz.epam.tam.module3.lecture234.collectionscomparison.core;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 
-public class MapMethods {
-    private HashMap<Integer,String> hMap = new HashMap<>();
-    private TreeMap<Integer,String> tMap = new TreeMap<>();
+public class MapMethods extends AbstractMethods<Map<Integer,String>>{
 
-    public void pickOperation(int operationType) {
-        switch (operationType){
-            case 1:
-                addElementsToHashMap();
-                break;
-            case 2:
-                addElementsToTreeMap();
-                break;
-            case 3:
-                getElementsFromHashMap();
-                break;
-            case 4:
-                getElementsFromTreeMap();
-                break;
-            case 5:
-                removeElementsFromHashMap();
-                break;
-            case 6:
-                removeElementsFromTreeMap();
-                break;
-        }
-    }
-    private void addElementsToHashMap(){
+    public Map<Integer,String> createHashMap(){
+        HashMap<Integer,String> hMap = new HashMap<>();
         for(int i = 0; i < 1000000; i++){
             hMap.put(i ,i + "1");
         }
+        return hMap;
     }
-
-    private void addElementsToTreeMap(){
+    public Map<Integer,String> createTreeMap(){
+        TreeMap<Integer,String> tMap = new TreeMap<>();
         for(int i = 0; i < 1000000; i++){
             tMap.put(i ,i + "1");
         }
+        return tMap;
     }
-    private void getElementsFromHashMap(){
-        addElementsToHashMap();
+
+    public void addElements(Map<Integer,String> m){
         for(int i = 0; i < 1000000; i++){
-            hMap.containsKey(i);
+            m.put(i ,i + "1");
         }
     }
 
-    private void getElementsFromTreeMap(){
-        addElementsToTreeMap();
+    public void getElements(Map<Integer,String> m){
         for(int i = 0; i < 1000000; i++){
-            tMap.containsKey(i);
+            m.containsKey(i);
         }
     }
-    private void removeElementsFromHashMap(){
-        addElementsToHashMap();
+    public void removeElements(Map<Integer,String> m){
         for(int i = 0; i < 1000000; i++){
-            hMap.remove(i);
-        }
-    }
-
-    private void removeElementsFromTreeMap(){
-        addElementsToTreeMap();
-        for(int i = 0; i < 1000000; i++){
-            tMap.remove(i);
+            m.remove(i);
         }
     }
 }

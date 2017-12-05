@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ListMethods {
-
+public class ListMethods extends AbstractMethods<List<Integer>>{
 
     public LinkedList<Integer> createLinkedList() {
         LinkedList<Integer> lList = new LinkedList<>();
@@ -15,41 +14,28 @@ public class ListMethods {
         return lList;
     }
     public ArrayList<Integer> createArrayList() {
-        ArrayList<Integer> lList = new ArrayList<>();
+        ArrayList<Integer> aList = new ArrayList<>();
         for (int i = 0; i < 1000000; i++) {
-            lList.add(i);
+            aList.add(i);
         }
-        return lList;
+        return aList;
     }
-    public void pickOperation(int operationType,List<Integer> a) {
-        switch (operationType){
-            case 1:
-                addElements(a);
-                break;
-            case 2:
-                getElements(a);
-                break;
-            case 3:
-                removeElements(a);
-                break;
-        }
-    }
-    public void addElements(List<Integer> a) {
+
+    public void addElements(List<Integer> l) {
         for (int i = 0; i < 1000000; i++) {
-            a.add(i);
+            l.add(i);
         }
     }
 
-    private void getElements(List<Integer> a){
+    public void getElements(List<Integer> l){
         for (int i = 0;i < 10000; i++){
-            a.get(i);
+            l.get(i);
         }
     }
 
-    private void removeElements(List<Integer> a){
+    public void removeElements(List<Integer> l){
         for (int i = 999999;i >= 0; i--){
-            a.remove(i);
+            l.remove(i);
         }
     }
-
 }
