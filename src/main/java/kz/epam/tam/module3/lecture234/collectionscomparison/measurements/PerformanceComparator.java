@@ -1,6 +1,5 @@
 package kz.epam.tam.module3.lecture234.collectionscomparison.measurements;
 
-import kz.epam.tam.module3.lecture234.collectionscomparison.core.AbstractMethods;
 import kz.epam.tam.module3.lecture234.collectionscomparison.core.ListMethods;
 import kz.epam.tam.module3.lecture234.collectionscomparison.core.MapMethods;
 import kz.epam.tam.module3.lecture234.collectionscomparison.core.SetMethods;
@@ -12,47 +11,52 @@ import java.util.Set;
 
 public class PerformanceComparator {
 
+    private PerformanceTimer performanceTimer = new PerformanceTimer();
+
     public void compareListsPerformance(){
-        PerformancePrinter.printStartMsg();
         PerformancePrinter.printType("List's");
         PerformancePrinter.printAction("Adding","to","list");
-        AbstractMethods<List<Integer>> list = new ListMethods();
-        ListMethods methodL = new ListMethods();
-        list.addition(methodL.createArrayList(), "Addition","ArrayList");
-        list.addition(methodL.createLinkedList(), "Addition","LinkedList");
+        ListMethods list = new ListMethods();
+        List<Integer> array = list.createArrayList();
+        List<Integer> linked = list.createLinkedList();
+        PerformancePrinter.printResult("Addition","ArrayList", performanceTimer.addToList(array));
+        PerformancePrinter.printResult("Addition","LinkedList", performanceTimer.addToList(linked));
         PerformancePrinter.printAction("Searching","in","list");
-        list.search(methodL.createArrayList(), "Search","ArrayList");
-        list.search(methodL.createLinkedList(), "Search","LinkedList");
+        PerformancePrinter.printResult("Search","ArrayList", performanceTimer.searchInList(array));
+        PerformancePrinter.printResult("Search","LinkedList", performanceTimer.searchInList(linked));
         PerformancePrinter.printAction("Deleting","from","list");
-        list.deletion(methodL.createArrayList(), "Deletion","ArrayList");
-        list.deletion(methodL.createLinkedList(), "Deletion","ArrayList");
+        PerformancePrinter.printResult("Deletion","ArrayList", performanceTimer.deleteFromList(array));
+        PerformancePrinter.printResult("Deletion","LinkedList", performanceTimer.deleteFromList(linked));
     }
     public void compareSetsPerformance(){
         PerformancePrinter.printType("Set's");
         PerformancePrinter.printAction("Adding","to","set");
-        AbstractMethods<Set<String>> set = new SetMethods();
-        SetMethods methodS = new SetMethods();
-        set.addition(methodS.createHashSet(), "Addition","HashSet");
-        set.addition(methodS.createTreeSet(), "Addition","TreeSet");
+        SetMethods set = new SetMethods();
+        Set<String> hash = set.createHashSet();
+        Set<String> tree = set.createTreeSet();
+        PerformancePrinter.printResult("Addition","HashSet", performanceTimer.addToSet(hash));
+        PerformancePrinter.printResult("Addition","TreeSet", performanceTimer.addToSet(tree));
         PerformancePrinter.printAction("Searching","in","set");
-        set.search(methodS.createHashSet(), "Search","HashSet");
-        set.search(methodS.createTreeSet(), "Search","TreeSet");
+        PerformancePrinter.printResult("Search","HashSet", performanceTimer.searchInSet(hash));
+        PerformancePrinter.printResult("Search","TreeSet", performanceTimer.searchInSet(tree));
         PerformancePrinter.printAction("Deleting","from","set");
-        set.deletion(methodS.createHashSet(), "Deletion","HashSet");
-        set.deletion(methodS.createTreeSet(), "Deletion","TreeSet");
+        PerformancePrinter.printResult("Deletion","HashSet", performanceTimer.deleteFromSet(hash));
+        PerformancePrinter.printResult("Deletion","TreeSet", performanceTimer.deleteFromSet(tree));
+
     }
     public void compareMapsPerformance(){
         PerformancePrinter.printType("Map's");
         PerformancePrinter.printAction("Adding","to","map");
-        AbstractMethods<Map<Integer,String>> map = new MapMethods();
-        MapMethods methodM = new MapMethods();
-        map.addition(methodM.createHashMap(),"Addition","HashMap");
-        map.addition(methodM.createTreeMap(),"Addition","TreeMap");
+        MapMethods map = new MapMethods();
+        Map<Integer,String> hash = map.createHashMap();
+        Map<Integer,String> tree = map.createTreeMap();
+        PerformancePrinter.printResult("Addition","HashMap", performanceTimer.addToMap(hash));
+        PerformancePrinter.printResult("Addition","TreeSet", performanceTimer.addToMap(tree));
         PerformancePrinter.printAction("Searching","in","map");
-        map.search(methodM.createHashMap(),"Search","HashMap");
-        map.search(methodM.createTreeMap(),"Search","TreeMap");
+        PerformancePrinter.printResult("Search","HashMap", performanceTimer.searchInMap(hash));
+        PerformancePrinter.printResult("Search","TreeMap", performanceTimer.searchInMap(tree));
         PerformancePrinter.printAction("Deleting","from","map");
-        map.deletion(methodM.createHashMap(),"Deletion","HashMap");
-        map.deletion(methodM.createTreeMap(),"Deletion","TreeMap");
+        PerformancePrinter.printResult("Deletion","HashMap", performanceTimer.deleteFromMap(hash));
+        PerformancePrinter.printResult("Deletion","TreeMap", performanceTimer.deleteFromMap(tree));
     }
 }
