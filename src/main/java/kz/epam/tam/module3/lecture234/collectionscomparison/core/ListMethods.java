@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ListMethods extends AbstractMethods<List<Integer>>{
+public class ListMethods {
 
     public LinkedList<Integer> createLinkedList() {
         LinkedList<Integer> lList = new LinkedList<>();
@@ -34,7 +34,7 @@ public class ListMethods extends AbstractMethods<List<Integer>>{
     }
 
     public void removeElements(List<Integer> l){
-        for (int i = 999999;i >= 0; i--){
+        for (int i = 0; i < 10000; i++){
             l.remove(i);
         }
     }

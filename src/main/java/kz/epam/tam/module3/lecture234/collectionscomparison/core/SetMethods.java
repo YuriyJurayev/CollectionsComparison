@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class SetMethods extends AbstractMethods<Set<String>>{
+public class SetMethods {
 
     public Set<String> createHashSet(){
         HashSet<String> hSet = new HashSet<>();

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class MapMethods extends AbstractMethods<Map<Integer,String>>{
+public class MapMethods {
 
     public Map<Integer,String> createHashMap(){
         HashMap<Integer,String> hMap = new HashMap<>();
