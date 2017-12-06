@@ -19,14 +19,14 @@ public class PerformanceComparator {
         ListMethods list = new ListMethods();
         List<Integer> array = list.createArrayList();
         List<Integer> linked = list.createLinkedList();
-        PerformancePrinter.printResult("Addition","ArrayList", performanceTimer.addToList(array));
-        PerformancePrinter.printResult("Addition","LinkedList", performanceTimer.addToList(linked));
+        PerformancePrinter.printResult("Addition","ArrayList", performanceTimer.addToListTime(array));
+        PerformancePrinter.printResult("Addition","LinkedList", performanceTimer.addToListTime(linked));
         PerformancePrinter.printAction("Searching","in","list");
-        PerformancePrinter.printResult("Search","ArrayList", performanceTimer.searchInList(array));
-        PerformancePrinter.printResult("Search","LinkedList", performanceTimer.searchInList(linked));
+        PerformancePrinter.printResult("Search","ArrayList", performanceTimer.searchInListTime(array));
+        PerformancePrinter.printResult("Search","LinkedList", performanceTimer.searchInListTime(linked));
         PerformancePrinter.printAction("Deleting","from","list");
-        PerformancePrinter.printResult("Deletion","ArrayList", performanceTimer.deleteFromList(array));
-        PerformancePrinter.printResult("Deletion","LinkedList", performanceTimer.deleteFromList(linked));
+        PerformancePrinter.printResult("Deletion","ArrayList", performanceTimer.deleteFromListTime(array));
+        PerformancePrinter.printResult("Deletion","LinkedList", performanceTimer.deleteFromListTime(linked));
     }
     public void compareSetsPerformance(){
         PerformancePrinter.printType("Set's");
@@ -34,14 +34,14 @@ public class PerformanceComparator {
         SetMethods set = new SetMethods();
         Set<String> hash = set.createHashSet();
         Set<String> tree = set.createTreeSet();
-        PerformancePrinter.printResult("Addition","HashSet", performanceTimer.addToSet(hash));
-        PerformancePrinter.printResult("Addition","TreeSet", performanceTimer.addToSet(tree));
+        PerformancePrinter.printResult("Addition","HashSet", performanceTimer.addToSetTime(hash));
+        PerformancePrinter.printResult("Addition","TreeSet", performanceTimer.addToSetTime(tree));
         PerformancePrinter.printAction("Searching","in","set");
-        PerformancePrinter.printResult("Search","HashSet", performanceTimer.searchInSet(hash));
-        PerformancePrinter.printResult("Search","TreeSet", performanceTimer.searchInSet(tree));
+        PerformancePrinter.printResult("Search","HashSet", performanceTimer.searchInSetTime(hash));
+        PerformancePrinter.printResult("Search","TreeSet", performanceTimer.searchInSetTime(tree));
         PerformancePrinter.printAction("Deleting","from","set");
-        PerformancePrinter.printResult("Deletion","HashSet", performanceTimer.deleteFromSet(hash));
-        PerformancePrinter.printResult("Deletion","TreeSet", performanceTimer.deleteFromSet(tree));
+        PerformancePrinter.printResult("Deletion","HashSet", performanceTimer.deleteFromSetTime(hash));
+        PerformancePrinter.printResult("Deletion","TreeSet", performanceTimer.deleteFromSetTime(tree));
 
     }
     public void compareMapsPerformance(){
@@ -50,13 +50,13 @@ public class PerformanceComparator {
         MapMethods map = new MapMethods();
         Map<Integer,String> hash = map.createHashMap();
         Map<Integer,String> tree = map.createTreeMap();
-        PerformancePrinter.printResult("Addition","HashMap", performanceTimer.addToMap(hash));
-        PerformancePrinter.printResult("Addition","TreeSet", performanceTimer.addToMap(tree));
+        PerformancePrinter.printResult("Addition","HashMap", performanceTimer.addToMapTime(hash));
+        PerformancePrinter.printResult("Addition","TreeSet", performanceTimer.addToMapTime(tree));
         PerformancePrinter.printAction("Searching","in","map");
-        PerformancePrinter.printResult("Search","HashMap", performanceTimer.searchInMap(hash));
-        PerformancePrinter.printResult("Search","TreeMap", performanceTimer.searchInMap(tree));
+        PerformancePrinter.printResult("Search","HashMap", performanceTimer.searchInMapTime(hash));
+        PerformancePrinter.printResult("Search","TreeMap", performanceTimer.searchInMapTime(tree));
         PerformancePrinter.printAction("Deleting","from","map");
-        PerformancePrinter.printResult("Deletion","HashMap", performanceTimer.deleteFromMap(hash));
-        PerformancePrinter.printResult("Deletion","TreeMap", performanceTimer.deleteFromMap(tree));
+        PerformancePrinter.printResult("Deletion","HashMap", performanceTimer.deleteFromMapTime(hash));
+        PerformancePrinter.printResult("Deletion","TreeMap", performanceTimer.deleteFromMapTime(tree));
     }
 }
