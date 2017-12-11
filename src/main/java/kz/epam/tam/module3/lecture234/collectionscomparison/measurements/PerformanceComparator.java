@@ -51,7 +51,7 @@ public class PerformanceComparator {
         Map<Integer,String> hash = map.createHashMap();
         Map<Integer,String> tree = map.createTreeMap();
         PerformancePrinter.printResult("Addition","HashMap", performanceTimer.addToMapTime(hash));
-        PerformancePrinter.printResult("Addition","TreeSet", performanceTimer.addToMapTime(tree));
+        PerformancePrinter.printResult("Addition","TreeMap", performanceTimer.addToMapTime(tree));
         PerformancePrinter.printAction("Searching","in","map");
         PerformancePrinter.printResult("Search","HashMap", performanceTimer.searchInMapTime(hash));
         PerformancePrinter.printResult("Search","TreeMap", performanceTimer.searchInMapTime(tree));
