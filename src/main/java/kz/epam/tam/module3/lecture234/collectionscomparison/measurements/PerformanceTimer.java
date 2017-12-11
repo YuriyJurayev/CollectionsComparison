@@ -12,7 +12,6 @@ class PerformanceTimer {
 
     private long start;
     private long end;
-    private long difference;
     private ListMethods list = new ListMethods();
     private SetMethods set = new SetMethods();
     private MapMethods map = new MapMethods();
@@ -21,70 +20,61 @@ class PerformanceTimer {
         start = System.currentTimeMillis();
         list.addElements(l);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
 
     long searchInListTime(List<Integer> l){
         start = System.currentTimeMillis();
         list.getElements(l);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
 
     long deleteFromListTime(List<Integer> l){
         start = System.currentTimeMillis();
         list.removeElements(l);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
     long addToSetTime(Set<String> s){
         start = System.currentTimeMillis();
         set.addElements(s);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
 
     long searchInSetTime(Set<String> s){
         start = System.currentTimeMillis();
         set.getElements(s);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
 
     long deleteFromSetTime(Set<String> s){
         start = System.currentTimeMillis();
         set.removeElements(s);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
     long addToMapTime(Map<Integer,String> m){
         start = System.currentTimeMillis();
         map.addElements(m);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
 
     long searchInMapTime(Map<Integer,String> m){
         start = System.currentTimeMillis();
         map.getElements(m);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
 
     long deleteFromMapTime(Map<Integer,String> m){
         start = System.currentTimeMillis();
         map.removeElements(m);
         end = System.currentTimeMillis();
-        difference = end - start;
-        return difference;
+        return end - start;
     }
 
 }
